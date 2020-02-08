@@ -1,0 +1,27 @@
+<div *ngFor="let item of catalogs">
+  <div class="card">
+    <div class="card-header">{{ item.CompanyName }}</div>
+    <div class="card-body">
+      <h4 class="card-title">{{ item.DescriptionNL }}</h4>
+      <p>{{ item.Description }}</p>
+      <p>{{ item.ItemVisibleFrom }} {{ item.Language }}</p>
+      <p>{{ item.CategoryDescription }}</p>
+      <p>{{ item.SubCategoryDescription }}</p>
+      <p>{{ item.Url }}</p>
+      <p class="card-text">{{ item.DescriptionLongNL }}</p>
+
+      <ul class="nav nav-pills">
+        <button
+          class="btn btn-primary"
+          type="button"
+          (click)="catalogDetails(item)"
+        >
+          Details
+        </button>
+        <span class="ml-1"></span>
+        <a class="nav-link active" target="_blank" [href]="item.Url">View</a>
+      </ul>
+      <!-- <iframe src="{{ item.Url }}"></iframe> -->
+    </div>
+  </div>
+</div>
